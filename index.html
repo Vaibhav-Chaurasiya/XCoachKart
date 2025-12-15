@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XCoachKart - Professional Fitness Coaching at Your Doorstep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        
+        .section-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.75));
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1a7f8e 0%, #23a5b8 100%);
+            transition: all 0.3s ease;
+            color: #fff;
+            font-weight: bold;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 18px;
+            display: inline-block;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26, 127, 142, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 127, 142, 0.5);
+            background: linear-gradient(135deg, #23a5b8 0%, #1a7f8e 100%);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #f39c12;
+            color: #f39c12;
+            font-weight: bold;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 18px;
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-outline:hover {
+            background: #f39c12;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+        }
+        
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(26, 127, 142, 0.3);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+            background: #25D366;
+            padding: 16px;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background: #20BA5A;
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        
+        .animate-on-scroll.animated {
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+        }
+        
+        .fade-in-up {
+            animation-name: fadeInUp;
+        }
+        
+        .fade-in-left {
+            animation-name: fadeInLeft;
+        }
+        
+        .fade-in-right {
+            animation-name: fadeInRight;
+        }
+        
+        .scale-in {
+            animation-name: scaleIn;
+        }
+        
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            border-bottom: 1px solid rgba(26, 127, 142, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .nav-logo {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-logo img {
+            height: 48px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: none;
+            gap: 32px;
+        }
+        
+        .nav-link {
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #23a5b8;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1a7f8e, #f39c12);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            display: none;
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            color: #23a5b8;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+        
+        .mobile-menu-content {
+            padding: 8px 8px 12px;
+        }
+        
+        .mobile-menu-content a {
+            display: block;
+            padding: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-content a:hover {
+            color: #23a5b8;
+            padding-left: 20px;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            position: relative;
+            padding: 80px 0;
+        }
+        
+        .section-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .section-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(3px);
+            transform: scale(1.05);
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            padding: 0 20px;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .text-accent {
+            background: linear-gradient(135deg, #1a7f8e 0%, #f39c12 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            color: #d1d5db;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+        
+        .section-title h2 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+        
+        .underline {
+            height: 4px;
+            width: 96px;
+            background: linear-gradient(90deg, #1a7f8e, #f39c12);
+            margin: 0 auto 32px;
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 20px;
+            color: #d1d5db;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+        
+        .card {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(26, 127, 142, 0.3);
+            padding: 32px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #1a7f8e, #f39c12);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            color: #23a5b8;
+        }
+        
+        .card p {
+            color: #d1d5db;
+            margin-bottom: 16px;
+        }
+        
+        .card ul {
+            list-style: none;
+        }
+        
+        .card ul li {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+        }
+        
+        .feature-box {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid rgba(26, 127, 142, 0.3);
+            padding: 24px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            border-color: #23a5b8;
+            transform: translateX(10px);
+        }
+        
+        .feature-flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            color: #23a5b8;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-box:hover .feature-icon {
+            transform: scale(1.2);
+        }
+        
+        .feature-box h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .stat-card {
+            background: rgba(0,0,0,0.7);
+            border: 2px solid rgba(26, 127, 142, 0.4);
+            padding: 32px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(26, 127, 142, 0.2), transparent);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+            border-radius: 50%;
+        }
+        
+        .stat-card:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .stat-card:hover {
+            border-color: #f39c12;
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-card h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quality-box {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(26,127,142,0.1) 100%);
+            border: 1px solid rgba(26, 127, 142, 0.3);
+            padding: 32px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .quality-box:hover {
+            border-color: #f39c12;
+        }
+        
+        .quality-box h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            color: #23a5b8;
+        }
+        
+        .quality-list {
+            list-style: none;
+        }
+        
+        .quality-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #d1d5db;
+            transition: all 0.3s ease;
+        }
+        
+        .quality-list li:hover {
+            transform: translateX(10px);
+            color: #fff;
+        }
+        
+        .quality-list li span:first-child {
+            color: #f39c12;
+            margin-top: 4px;
+            font-weight: bold;
+        }
+        
+        .testimonial-card {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid rgba(26, 127, 142, 0.3);
+            padding: 48px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: #f39c12;
+        }
+        
+        .testimonial-quote {
+            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 48px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            color: #d1d5db;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .author-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .author-info {
+            color: #9ca3af;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #6b7280;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+        }
+        
+        .dot:hover {
+            transform: scale(1.2);
+        }
+        
+        .dot.active {
+            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            width: 32px;
+            border-radius: 6px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #23a5b8;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(26, 127, 142, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #23a5b8;
+            box-shadow: 0 0 0 3px rgba(26, 127, 142, 0.1);
+        }
+        
+        .form-group select option {
+            background: #000;
+            color: #fff;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: #23a5b8;
+        }
+        
+        .contact-item h4 {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .contact-item a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: #23a5b8;
+        }
+        
+        .contact-item p {
+            color: #d1d5db;
+        }
+        
+        .special-offer {
+            background: linear-gradient(135deg, rgba(26,127,142,0.2) 0%, rgba(0,0,0,0.7) 100%);
+            border: 1px solid rgba(243, 156, 18, 0.5);
+            padding: 32px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(243, 156, 18, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(243, 156, 18, 0.4);
+            }
+        }
+        
+        .special-offer h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        
+        .special-offer p {
+            color: #d1d5db;
+            margin-bottom: 16px;
+        }
+        
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(26, 127, 142, 0.3);
+            padding: 48px 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .footer-section h4 {
+            font-weight: bold;
+            color: #23a5b8;
+            margin-bottom: 16px;
+        }
+        
+        .footer-section p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #23a5b8;
+            padding-left: 10px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(26, 127, 142, 0.3);
+            padding-top: 32px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            
+            .nav-cta {
+                display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 72px;
+            }
+            
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .testimonial-card {
+                padding: 48px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .section-title h2 {
+                font-size: 56px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 40px;
+            }
+            
+            .hero-content p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .testimonial-card {
+                padding: 24px;
+            }
+            
+            .testimonial-text {
+                font-size: 18px;
+            }
+            
+            .stat-number {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/+918888899464?text=Hi%20XCoachKart,%20I%20want%20to%20know%20more%20about%20your%20fitness%20coaching%20services" 
+       target="_blank" 
+       class="whatsapp-float">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo" onclick="scrollToTop()">
+                    <img src="/assets/logo.png" alt="XCoachKart Logo">
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#quality" class="nav-link">Our Standards</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-cta">
+                    <a href="#contact" class="btn-primary">Book Demo</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="mobile-menu">
+                <div class="mobile-menu-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#quality">Our Standards</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#contact" class="btn-primary" style="margin-top:16px;text-align:center;">Book Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="section-bg">
+            <img src="/assets/images/hero.jpg" alt="Fitness Training">
+            <div class="hero-gradient" style="position:absolute;inset:0;"></div>
+        </div>
+        
+        <div class="section-content hero-content">
+            <h1>
+                Professional Fitness Coaching<br/>
+                <span class="text-accent">at Your Doorstep</span>
+            </h1>
+            <p>
+                Safety-first approach with SOP-driven coaching by disciplined professionals. Transform your fitness journey at home with XCoachKart.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book a Demo Session</a>
+                <a href="https://wa.me/+918888899464?text=Hi%20XCoachKart,%20I%20want%20to%20book%20a%20demo%20session" 
+                   target="_blank"
+                   class="btn-outline">WhatsApp Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-bg">
+            <img src="/assets/images/about.jpg" alt="About XCoachKart">
+            <div class="section-overlay" style="position:absolute;inset:0;"></div>
+        </div>
+        
+        <div class="section-content container">
+            <div class="grid-2">
+                <div class="animate-on-scroll fade-in-left">
+                    <h2 style="font-size:48px;font-weight:bold;margin-bottom:24px;">
+                        Built on <span class="text-accent">Discipline & Trust</span>
+                    </h2>
+                    <div class="underline" style="margin:0 0 32px 0;"></div>
+                    <p style="font-size:18px;color:#d1d5db;margin-bottom:24px;">
+                        Founded by ex-Indian Air Force professionals, XCoachKart brings military-grade discipline and leadership to fitness coaching. We understand that fitness is not just about exercise—it's about building sustainable habits with safety and consistency.
+                    </p>
+                    <p style="font-size:18px;color:#d1d5db;">
+                        Our mission is to make professional fitness coaching accessible to every family, right at your doorstep. No intimidation, no judgment—just results-driven training with a friendly, supportive approach.
+                    </p>
+                </div>
+                
+                <div style="display:flex;flex-direction:column;gap:24px;">
+                    <div class="feature-box animate-on-scroll fade-in-right" style="animation-delay: 0.1s;">
+                        <div class="feature-flex">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h3>Safety-First Approach</h3>
+                                <p style="color:#d1d5db;">Every session follows strict safety protocols and proper form guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box animate-on-scroll fade-in-right" style="animation-delay: 0.2s;">
+                        <div class="feature-flex">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h3>Certified Professionals</h3>
+                                <p style="color:#d1d5db;">All trainers are certified and undergo continuous skill development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-box animate-on-scroll fade-in-right" style="animation-delay: 0.3s;">
+                        <div class="feature-flex">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h3>Consistent Excellence</h3>
+                                <p style="color:#d1d5db;">SOP-driven coaching ensures you receive the same high standard every session.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-bg">
+            <img src="/assets/images/services.jpg" alt="Our Services">
+            <div class="section-overlay" style="position:absolute;inset:0;"></div>
+        </div>
+        
+        <div class="section-content container">
+            <div class="section-title animate-on-scroll fade-in-up">
+                <h2>Our <span class="text-accent">Programs</span></h2>
+                <div class="underline"></div>
+                <p>Flexible fitness solutions designed for your lifestyle, delivered right to your doorstep.</p>
+            </div>
+            
+            <div class="grid-4">
+                <div class="card card-hover animate-on-scroll scale-in" style="animation-delay: 0.1s;">
+                    <div class="card-icon">
+                        <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22 14.86 20.57 16.29 22 18.43 19.86 19.86 21.29 21.29 19.86l-1.43-1.43 1.43-1.43-1.43-1.43-1.43 1.43z"/>
+                        </svg>
+                    </div>
+                    <h3>One-to-One<br/>Personal Training</h3>
+                    <p>Personalized attention with customized workout plans tailored to your goals and fitness level.</p>
+                    <ul>
+                        <li>Individual focus & attention</li>
+                        <li>Custom meal guidance</li>
+                        <li>Progress tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="card card-hover animate-on-scroll scale-in" style="animation-delay: 0.2s;">
+                    <div class="card-icon">
+                        <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Small Group /<br/>Society Training</h3>
+                    <p>Energizing group sessions for residential societies and communities, building fitness together.</p>
+                    <ul>
+                        <li>4-8 members per group</li>
+                        <li>Motivating environment</li>
+                        <li>Cost-effective</li>
+                    </ul>
+                </div>
+                
+                <div class="card card-hover animate-on-scroll scale-in" style="animation-delay: 0.3s;">
+                    <div class="card-icon">
+                        <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 14V9c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v9h2v-7h4v7h2zM6 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 14V9c0-1.11-.89-2-2-2H4c-1.11 0-2 .89-2 2v9h2v-7h4v7h2zm-1.5-5.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm4 7.5v-4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v4h2v-3h2v3h2z"/>
+                        </svg>
+                    </div>
+                    <h3>Family &<br/>Kids Fitness</h3>
+                    <p>Fun, age-appropriate fitness activities that get the whole family moving and healthy together.</p>
+                    <ul>
+                        <li>Family bonding activities</li>
+                        <li>Kids-friendly exercises</li>
+                        <li>Healthy habits building</li>
+                    </ul>
+                </div>
+                
+                <div class="card card-hover animate-on-scroll scale-in" style="animation-delay: 0.4s;">
+                    <div class="card-icon">
+                        <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                        </svg>
+                    </div>
+                    <h3>Online<br/>Coaching</h3>
+                    <p>Live virtual sessions for those who prefer working out from anywhere with professional guidance.</p>
+                    <ul>
+                        <li>Live video sessions</li>
+                        <li>Flexible scheduling</li>
+                        <li>Pan-India coverage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quality">
+        <div class="section-bg">
+            <img src="/assets/images/sop.jpg" alt="Quality Standards">
+            <div class="section-overlay" style="position:absolute;inset:0;"></div>
+        </div>
+        
+        <div class="section-content container">
+            <div class="section-title animate-on-scroll fade-in-up">
+                <h2>Our <span class="text-accent">Quality Standards</span></h2>
+                <div class="underline"></div>
+                <p>Military-inspired discipline meets professional fitness coaching standards.</p>
+            </div>
+            
+            <div class="grid-3" style="margin-bottom:48px;">
+                <div class="stat-card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
+                    <div class="stat-number">60</div>
+                    <h3>Minutes Per Session</h3>
+                    <p style="color:#d1d5db;">Standard structured sessions with warm-up, training, and cool-down.</p>
+                </div>
+                
+                <div class="stat-card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
+                    <div class="stat-number">100%</div>
+                    <h3>Certified Trainers</h3>
+                    <p style="color:#d1d5db;">Every trainer holds recognized certifications and undergoes regular training.</p>
+                </div>
+                
+                <div class="stat-card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
+                    <div class="stat-number">24/7</div>
+                    <h3>Support Available</h3>
+                    <p style="color:#d1d5db;">Round-the-clock assistance for queries, scheduling, and guidance.</p>
+                </div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="quality-box animate-on-scroll fade-in-left">
+                    <h3>SOP-Driven Excellence</h3>
+                    <ul class="quality-list">
+                        <li><span>▸</span><span>Standardized onboarding with fitness assessment and goal setting</span></li>
+                        <li><span>▸</span><span>Safety protocols including injury prevention and proper form training</span></li>
+                        <li><span>▸</span><span>Weekly progress tracking with measurable KPIs</span></li>
+                        <li><span>▸</span><span>Regular feedback sessions and program adjustments</span></li>
+                    </ul>
+                </div>
+                
+                <div class="quality-box animate-on-scroll fade-in-right">
+                    <h3>Performance Commitment</h3>
+                    <ul class="quality-list">
+                        <li><span>▸</span><span>Punctual arrival with 15-minute buffer time</span></li>
+                        <li><span>▸</span><span>Professional conduct and respectful communication</span></li>
+                        <li><span>▸</span><span>Customized workout plans based on your equipment and space</span></li>
+                        <li><span>▸</span><span>Continuous learning and certification upgrades for trainers</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="section-bg">
+            <img src="/assets/images/testimonials.jpg" alt="Client Testimonials">
+            <div class="section-overlay" style="position:absolute;inset:0;"></div>
+        </div>
+        
+        <div class="section-content container">
+            <div class="section-title animate-on-scroll fade-in-up">
+                <h2>What Our Clients <span class="text-accent">Say</span></h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div style="max-width:896px;margin:0 auto;">
+                <div id="testimonial-slider">
+                    <div class="testimonial-slide testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">
+                            XCoachKart has been a game-changer for our family. The trainer comes to our home, works with both me and my wife, and even has fun fitness activities for our kids. The disciplined approach gives us confidence in the quality of coaching.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RS</div>
+                            <div>
+                                <div class="author-name">Rajesh Sharma</div>
+                                <div class="author-info">Gurgaon - Family Fitness Program</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide testimonial-card hidden">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">
+                            As a working professional with zero gym experience, I was nervous about starting fitness. The trainer's friendly yet professional approach made me comfortable. In 3 months, I've lost 8 kgs and feel more energetic than ever!
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PK</div>
+                            <div>
+                                <div class="author-name">Priya Kapoor</div>
+                                <div class="author-info">Noida - Personal Training</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide testimonial-card hidden">
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">
+                            Our society group training sessions are the highlight of our mornings! The coach maintains perfect energy levels and ensures everyone gets proper attention. Safety protocols are strictly followed. Highly recommend for residential communities.
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AM</div>
+                            <div>
+                                <div class="author-name">Amit Malhotra</div>
+                                <div class="author-info">Delhi - Society Group Training</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-dots">
+                        <button class="dot active"></button>
+                        <button class="dot"></button>
+                        <button class="dot"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-bg">
+            <img src="/assets/images/contact.jpg" alt="Contact Us">
+            <div class="section-overlay" style="position:absolute;inset:0;"></div>
+        </div>
+        
+        <div class="section-content container">
+            <div class="section-title animate-on-scroll fade-in-up">
+                <h2>Book Your <span class="text-accent">Free Demo</span></h2>
+                <div class="underline"></div>
+                <p>Start your fitness journey today with a complimentary demo session. Experience our professional coaching first-hand!</p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card animate-on-scroll fade-in-left">
+                    <h3 style="margin-bottom:24px;">Send Us Your Details</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location/City *</label>
+                            <input type="text" id="location" name="location" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goal">Fitness Goal *</label>
+                            <select id="goal" name="goal" required>
+                                <option value="">Select your goal</option>
+                                <option value="Weight Loss">Weight Loss</option>
+                                <option value="Muscle Gain">Muscle Gain</option>
+                                <option value="General Fitness">General Fitness</option>
+                                <option value="Family Fitness">Family Fitness</option>
+                                <option value="Society Group">Society Group Training</option>
+                                <option value="Online Coaching">Online Coaching</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width:100%;padding:16px;">
+                            Book Free Demo Session
+                        </button>
+                    </form>
+                </div>
+                
+                <div style="display:flex;flex-direction:column;gap:32px;" class="animate-on-scroll fade-in-right">
+                    <div class="card">
+                        <h3 style="margin-bottom:24px;">Get in Touch</h3>
+                        <div style="display:flex;flex-direction:column;gap:24px;">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.27.36-.66.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.55-.45-1-1-1H4.39c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <a href="tel:+918888899464">+918888899464</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12.05 20.21c-1.5 0-2.97-.39-4.27-1.14l-.3-.18-3.15.83.84-3.07-.19-.31a8.154 8.154 0 01-1.26-4.41c0-4.48 3.64-8.13 8.12-8.13 2.17 0 4.21.85 5.75 2.38 1.53 1.53 2.38 3.57 2.38 5.75 0 4.48-3.64 8.12-8.12 8.12z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>WhatsApp</h4>
+                                    <a href="https://wa.me/+918888899464" target="_blank">Chat with us instantly</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:Kaps_003@yahoo.co.in">Kaps_003@yahoo.co.in</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Service Areas</h4>
+                                    <p>
+                                        Ghaziabad, Noida, Greater Noida West
+                                        <br/><span style="font-size:14px;">+ Pan-India Online Coaching</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="special-offer">
+                        <h3>
+                            <svg width="24" height="24" fill="#f39c12" viewBox="0 0 24 24" style="vertical-align: text-bottom; margin-right: 8px;">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
+                            </svg>
+                            Special Offer
+                        </h3>
+                        <p>
+                            Book your demo this week and get <span class="text-accent" style="font-weight:bold;">20% OFF</span> on your first month subscription!
+                        </p>
+                        <p style="font-size:14px;color:#9ca3af;">*Offer valid for new customers only</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <img src="/assets/logo.png" alt="XCoachKart Logo" style="height:60px;width:auto;margin-bottom:16px;">
+                    <p>Professional fitness coaching at your doorstep with military-grade discipline and care.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li>Personal Training</li>
+                        <li>Group Training</li>
+                        <li>Family Fitness</li>
+                        <li>Online Coaching</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 XCoachKart. All rights reserved. | Professional Fitness Coaching at Your Doorstep</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Testimonial slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+        
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.add('hidden');
+                dots[i].classList.remove('active');
+            });
+            
+            slides[index].classList.remove('hidden');
+            dots[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        setInterval(nextSlide, 5000);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const goal = document.getElementById('goal').value;
+            
+            if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+            
+            const message = `Hi XCoachKart! I want to book a free demo session.
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Location:* ${location}
+*Fitness Goal:* ${goal}
+
+Please contact me to schedule the demo.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/+918888899464?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            contactForm.reset();
+            
+            alert('Thank you! Opening WhatsApp to confirm your demo booking.');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar shadow on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    const animationClass = entry.target.classList.contains('fade-in-up') ? 'fade-in-up' :
+                                         entry.target.classList.contains('fade-in-left') ? 'fade-in-left' :
+                                         entry.target.classList.contains('fade-in-right') ? 'fade-in-right' :
+                                         'scale-in';
+                    entry.target.classList.add(animationClass);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Counter animation for stats
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const text = statNumber.textContent;
+                    const number = parseInt(text);
+                    
+                    if (!isNaN(number)) {
+                        statNumber.textContent = '0';
+                        animateCounter(statNumber, number);
+                    }
+                    
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.stat-card').forEach(card => {
+            statsObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
