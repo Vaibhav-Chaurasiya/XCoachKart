@@ -158,6 +158,27 @@
             }
         }
         
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes fireworks {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
         .animate-on-scroll {
             opacity: 0;
         }
@@ -181,6 +202,167 @@
         
         .scale-in {
             animation-name: scaleIn;
+        }
+        
+        /* New Year Popup Styles */
+        .new-year-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .new-year-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .new-year-popup {
+            background: linear-gradient(135deg, rgba(26, 127, 142, 0.95) 0%, rgba(19, 56, 97, 0.95) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #f39c12;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: popupSlideIn 0.8s ease-out;
+        }
+        
+        .new-year-popup::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(45deg, #FFD700, #FF4500, #32CD32, #1E90FF);
+            opacity: 0;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #FFD700;
+            box-shadow: 0 0 10px #FFD700;
+            opacity: 0;
+        }
+        
+        .new-year-title {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .new-year-subtitle {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .discount-badge {
+            background: linear-gradient(45deg, #FF4500, #FF8C00);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 2em;
+            font-weight: 800;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
+            position: relative;
+            z-index: 2;
+            animation: fireworks 1s ease-in-out infinite;
+        }
+        
+        .new-year-message {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .new-year-btn {
+            background: linear-gradient(45deg, #FFD700, #FF8C00);
+            color: #000;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .new-year-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+        
+        .close-popup:hover {
+            background: rgba(255, 69, 0, 0.8);
+            transform: rotate(90deg);
         }
         
         nav {
@@ -903,6 +1085,14 @@
             .footer-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+            
+            .new-year-title {
+                font-size: 4em;
+            }
+            
+            .discount-badge {
+                font-size: 2.5em;
+            }
         }
         
         @media (min-width: 1024px) {
@@ -943,10 +1133,48 @@
             .stat-number {
                 font-size: 48px;
             }
+            
+            .new-year-popup {
+                padding: 30px 20px;
+            }
+            
+            .new-year-title {
+                font-size: 2.2em;
+            }
+            
+            .new-year-subtitle {
+                font-size: 1.4em;
+            }
+            
+            .discount-badge {
+                font-size: 1.8em;
+                padding: 12px 20px;
+            }
+            
+            .new-year-btn {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- New Year Popup -->
+    <div id="newYearPopup" class="new-year-popup-overlay">
+        <div class="new-year-popup">
+            <button class="close-popup">&times;</button>
+            <h1 class="new-year-title">HAPPY NEW YEAR 2026!</h1>
+            <h2 class="new-year-subtitle">Start Your Fitness Journey Now</h2>
+            <div class="discount-badge">20% OFF</div>
+            <p class="new-year-message">
+                Welcome 2026 with a healthier, fitter you! 
+                Join XCoachKart today and get <strong>20% OFF</strong> on all our fitness programs.
+                Let's make 2026 your fittest year yet!
+            </p>
+            <a href="#contact" class="new-year-btn">JOIN NOW & GET 20% OFF</a>
+        </div>
+    </div>
 
     <a href="https://wa.me/+918888899464?text=Hi%20XCoachKart,%20I%20want%20to%20know%20more%20about%20your%20fitness%20coaching%20services" 
        target="_blank" 
@@ -1334,7 +1562,7 @@
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.27.36-.66.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.55-.45-1-1-1H4.39c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+                                        <path d="M20.57 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.27.36-.66.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.55-.45-1-1-1H4.39c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
                                     </svg>
                                 </div>
                                 <div>
@@ -1443,6 +1671,65 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        }
+        
+        // New Year Popup Functions
+        const newYearPopup = document.getElementById('newYearPopup');
+        const closePopupBtn = document.querySelector('.close-popup');
+        
+        // Show popup after 5 seconds
+        setTimeout(() => {
+            newYearPopup.classList.add('active');
+            createConfetti();
+        }, 5000);
+        
+        // Close popup when close button is clicked
+        closePopupBtn.addEventListener('click', () => {
+            newYearPopup.classList.remove('active');
+        });
+        
+        // Close popup when clicking outside
+        newYearPopup.addEventListener('click', (e) => {
+            if (e.target === newYearPopup) {
+                newYearPopup.classList.remove('active');
+            }
+        });
+        
+        // Close popup when Join Now button is clicked
+        document.querySelector('.new-year-btn').addEventListener('click', () => {
+            newYearPopup.classList.remove('active');
+        });
+        
+        // Create confetti effect
+        function createConfetti() {
+            const popup = document.querySelector('.new-year-popup');
+            const colors = ['#FFD700', '#FF4500', '#32CD32', '#1E90FF', '#FF69B4', '#9370DB'];
+            
+            // Create confetti
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.opacity = Math.random() * 0.7 + 0.3;
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = confetti.style.width;
+                confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear ${Math.random() * 2}s infinite`;
+                popup.appendChild(confetti);
+            }
+            
+            // Create fireworks
+            for (let i = 0; i < 20; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = Math.random() * 80 + 10 + '%';
+                firework.style.top = Math.random() * 80 + 10 + '%';
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                firework.style.opacity = '0.7';
+                firework.style.animation = `fireworks ${Math.random() * 2 + 1}s ease-in-out ${Math.random() * 3}s infinite`;
+                popup.appendChild(firework);
+            }
         }
         
         // Mobile menu toggle
