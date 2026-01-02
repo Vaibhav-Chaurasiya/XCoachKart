@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XCoachKart - Professional Fitness Coaching at Your Doorstep</title>
+    <title>XCoachKart - Professional Fitness Coaching Delivered To Your Doorstep</title>
     <style>
         * {
             margin: 0;
@@ -12,9 +12,9 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #000;
-            color: #fff;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #fff;
+            color: #1a1a1a;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -28,19 +28,11 @@
             height: auto;
         }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%);
-        }
-        
-        .section-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.75));
-        }
-        
         .btn-primary {
-            background: linear-gradient(135deg, #1a7f8e 0%, #23a5b8 100%);
+            background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);
             transition: all 0.3s ease;
             color: #fff;
-            font-weight: bold;
+            font-weight: 600;
             padding: 16px 32px;
             border-radius: 8px;
             font-size: 18px;
@@ -48,20 +40,20 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(26, 127, 142, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(26, 127, 142, 0.5);
-            background: linear-gradient(135deg, #23a5b8 0%, #1a7f8e 100%);
+            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
         }
         
         .btn-outline {
             background: transparent;
-            border: 2px solid #f39c12;
-            color: #f39c12;
-            font-weight: bold;
+            border: 2px solid #006B7D;
+            color: #006B7D;
+            font-weight: 600;
             padding: 14px 32px;
             border-radius: 8px;
             font-size: 18px;
@@ -72,10 +64,10 @@
         }
         
         .btn-outline:hover {
-            background: #f39c12;
-            color: #000;
+            background: #006B7D;
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(243, 156, 18, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 107, 125, 0.4);
         }
         
         .card-hover {
@@ -84,7 +76,7 @@
         
         .card-hover:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(26, 127, 142, 0.3);
+            box-shadow: 0 20px 40px rgba(26, 58, 82, 0.15);
         }
         
         .whatsapp-float {
@@ -96,7 +88,7 @@
             background: #25D366;
             padding: 16px;
             border-radius: 50%;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -158,27 +150,6 @@
             }
         }
         
-        @keyframes confettiFall {
-            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-        
-        @keyframes popupSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        @keyframes fireworks {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.2); opacity: 1; }
-        }
-        
         .animate-on-scroll {
             opacity: 0;
         }
@@ -204,174 +175,13 @@
             animation-name: scaleIn;
         }
         
-        /* New Year Popup Styles */
-        .new-year-popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s ease;
-        }
-        
-        .new-year-popup-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .new-year-popup {
-            background: linear-gradient(135deg, rgba(26, 127, 142, 0.95) 0%, rgba(19, 56, 97, 0.95) 100%);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border: 3px solid #f39c12;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            animation: popupSlideIn 0.8s ease-out;
-        }
-        
-        .new-year-popup::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(45deg);
-            animation: shine 3s infinite linear;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-        
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: linear-gradient(45deg, #FFD700, #FF4500, #32CD32, #1E90FF);
-            opacity: 0;
-        }
-        
-        .firework {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #FFD700;
-            box-shadow: 0 0 10px #FFD700;
-            opacity: 0;
-        }
-        
-        .new-year-title {
-            font-size: 3em;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .new-year-subtitle {
-            font-size: 1.8em;
-            color: #fff;
-            margin-bottom: 30px;
-            font-weight: 600;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .discount-badge {
-            background: linear-gradient(45deg, #FF4500, #FF8C00);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 2em;
-            font-weight: 800;
-            display: inline-block;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
-            position: relative;
-            z-index: 2;
-            animation: fireworks 1s ease-in-out infinite;
-        }
-        
-        .new-year-message {
-            font-size: 1.2em;
-            color: #fff;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .new-year-btn {
-            background: linear-gradient(45deg, #FFD700, #FF8C00);
-            color: #000;
-            border: none;
-            padding: 18px 40px;
-            font-size: 1.3em;
-            font-weight: 700;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-        }
-        
-        .new-year-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
-        }
-        
-        .close-popup {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            z-index: 3;
-            transition: all 0.3s ease;
-        }
-        
-        .close-popup:hover {
-            background: rgba(255, 69, 0, 0.8);
-            transform: rotate(90deg);
-        }
-        
         nav {
             position: fixed;
             width: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(255,255,255,0.98);
             backdrop-filter: blur(10px);
             z-index: 50;
-            border-bottom: 1px solid rgba(26, 127, 142, 0.2);
+            border-bottom: 1px solid rgba(0, 107, 125, 0.1);
             transition: all 0.3s ease;
         }
         
@@ -409,13 +219,14 @@
         
         .nav-link {
             position: relative;
-            color: #fff;
+            color: #0A3D4A;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
         
         .nav-link:hover {
-            color: #23a5b8;
+            color: #FF8C00;
         }
         
         .nav-link::after {
@@ -425,7 +236,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #1a7f8e, #f39c12);
+            background: linear-gradient(90deg, #006B7D, #FF8C00);
             transition: width 0.3s ease;
         }
         
@@ -439,7 +250,7 @@
         
         .mobile-menu-btn {
             display: block;
-            color: #fff;
+            color: #0A3D4A;
             background: none;
             border: none;
             cursor: pointer;
@@ -448,17 +259,18 @@
         }
         
         .mobile-menu-btn:hover {
-            color: #23a5b8;
+            color: #FF8C00;
         }
         
         .mobile-menu {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
+            background: #fff;
         }
         
         .mobile-menu.active {
-            max-height: 500px;
+            max-height: 600px;
         }
         
         .mobile-menu-content {
@@ -468,13 +280,14 @@
         .mobile-menu-content a {
             display: block;
             padding: 12px;
-            color: #fff;
+            color: #0A3D4A;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .mobile-menu-content a:hover {
-            color: #23a5b8;
+            color: #FF8C00;
             padding-left: 20px;
         }
         
@@ -487,6 +300,7 @@
         section {
             position: relative;
             padding: 80px 0;
+            background: #fff;
         }
         
         .section-bg {
@@ -500,8 +314,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(3px);
-            transform: scale(1.05);
+            filter: blur(5px);
+            opacity: 0.15;
         }
         
         .section-content {
@@ -515,6 +329,7 @@
             align-items: center;
             justify-content: center;
             padding-top: 80px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
         
         .hero-content {
@@ -526,14 +341,15 @@
         
         .hero-content h1 {
             font-size: 48px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 24px;
             line-height: 1.2;
             animation: fadeInUp 1s ease;
+            color: #0A3D4A;
         }
         
         .text-accent {
-            background: linear-gradient(135deg, #1a7f8e 0%, #f39c12 100%);
+            background: linear-gradient(135deg, #006B7D 0%, #FF8C00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -541,12 +357,20 @@
         
         .hero-content p {
             font-size: 20px;
-            margin-bottom: 32px;
-            color: #d1d5db;
+            margin-bottom: 16px;
+            color: #4a5568;
             max-width: 768px;
             margin-left: auto;
             margin-right: auto;
             animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-location {
+            font-size: 18px;
+            color: #FF8C00;
+            font-weight: 600;
+            margin-bottom: 32px;
+            animation: fadeInUp 1s ease 0.3s both;
         }
         
         .hero-buttons {
@@ -564,21 +388,22 @@
         
         .section-title h2 {
             font-size: 48px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 24px;
+            color: #0A3D4A;
         }
         
         .underline {
             height: 4px;
             width: 96px;
-            background: linear-gradient(90deg, #1a7f8e, #f39c12);
+            background: linear-gradient(90deg, #006B7D, #FF8C00);
             margin: 0 auto 32px;
             border-radius: 2px;
         }
         
         .section-title p {
             font-size: 20px;
-            color: #d1d5db;
+            color: #4a5568;
             max-width: 768px;
             margin: 0 auto;
         }
@@ -603,11 +428,11 @@
         }
         
         .card {
-            background: rgba(0,0,0,0.7);
-            border: 1px solid rgba(26, 127, 142, 0.3);
+            background: #fff;
+            border: 1px solid rgba(0, 107, 125, 0.1);
             padding: 32px;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -619,7 +444,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, #1a7f8e, #f39c12);
+            background: linear-gradient(90deg, #006B7D, #FF8C00);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -631,7 +456,7 @@
         .card-icon {
             font-size: 48px;
             margin-bottom: 16px;
-            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            background: linear-gradient(135deg, #006B7D, #FF8C00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -639,13 +464,13 @@
         
         .card h3 {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 16px;
-            color: #23a5b8;
+            color: #0A3D4A;
         }
         
         .card p {
-            color: #d1d5db;
+            color: #4a5568;
             margin-bottom: 16px;
         }
         
@@ -655,7 +480,7 @@
         
         .card ul li {
             font-size: 14px;
-            color: #9ca3af;
+            color: #6b7280;
             margin-bottom: 8px;
             padding-left: 20px;
             position: relative;
@@ -665,21 +490,22 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #f39c12;
+            color: #FF8C00;
         }
         
         .feature-box {
-            background: rgba(0,0,0,0.6);
-            border: 1px solid rgba(26, 127, 142, 0.3);
+            background: #fff;
+            border: 1px solid rgba(0, 107, 125, 0.1);
             padding: 24px;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
         
         .feature-box:hover {
-            border-color: #23a5b8;
+            border-color: #FF8C00;
             transform: translateX(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         .feature-flex {
@@ -690,7 +516,7 @@
         
         .feature-icon {
             font-size: 32px;
-            color: #23a5b8;
+            color: #006B7D;
             transition: transform 0.3s ease;
         }
         
@@ -700,83 +526,63 @@
         
         .feature-box h3 {
             font-size: 20px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: #0A3D4A;
         }
         
         .stat-card {
-            background: rgba(0,0,0,0.7);
-            border: 2px solid rgba(26, 127, 142, 0.4);
+            background: #fff;
+            border: 2px solid rgba(0, 107, 125, 0.1);
             padding: 32px;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             text-align: center;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(26, 127, 142, 0.2), transparent);
-            transform: translate(-50%, -50%);
-            transition: width 0.5s ease, height 0.5s ease;
-            border-radius: 50%;
-        }
-        
-        .stat-card:hover::after {
-            width: 300px;
-            height: 300px;
         }
         
         .stat-card:hover {
-            border-color: #f39c12;
+            border-color: #FF8C00;
             transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         
         .stat-number {
-            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            background: linear-gradient(135deg, #006B7D, #FF8C00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-size: 64px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
         }
         
         .stat-card h3 {
             font-size: 20px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 8px;
-            position: relative;
-            z-index: 1;
+            color: #0A3D4A;
         }
         
         .quality-box {
-            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(26,127,142,0.1) 100%);
-            border: 1px solid rgba(26, 127, 142, 0.3);
+            background: #fff;
+            border: 1px solid rgba(0, 107, 125, 0.1);
             padding: 32px;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
         
         .quality-box:hover {
-            border-color: #f39c12;
+            border-color: #FF8C00;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         
         .quality-box h3 {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 24px;
-            color: #23a5b8;
+            color: #0A3D4A;
         }
         
         .quality-list {
@@ -788,36 +594,37 @@
             align-items: flex-start;
             gap: 12px;
             margin-bottom: 16px;
-            color: #d1d5db;
+            color: #4a5568;
             transition: all 0.3s ease;
         }
         
         .quality-list li:hover {
             transform: translateX(10px);
-            color: #fff;
+            color: #1a1a1a;
         }
         
         .quality-list li span:first-child {
-            color: #f39c12;
+            color: #FF8C00;
             margin-top: 4px;
-            font-weight: bold;
+            font-weight: 700;
         }
         
         .testimonial-card {
-            background: rgba(0,0,0,0.7);
-            border: 1px solid rgba(26, 127, 142, 0.3);
+            background: #fff;
+            border: 1px solid rgba(0, 107, 125, 0.1);
             padding: 48px;
             border-radius: 12px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
         
         .testimonial-card:hover {
-            border-color: #f39c12;
+            border-color: #FF8C00;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         
         .testimonial-quote {
-            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            background: linear-gradient(135deg, #006B7D, #FF8C00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -828,7 +635,7 @@
         
         .testimonial-text {
             font-size: 20px;
-            color: #d1d5db;
+            color: #4a5568;
             margin-bottom: 24px;
             font-style: italic;
         }
@@ -842,23 +649,24 @@
         .author-avatar {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            background: linear-gradient(135deg, #006B7D, #FF8C00);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-weight: bold;
+            font-weight: 700;
             flex-shrink: 0;
         }
         
         .author-name {
-            font-weight: bold;
+            font-weight: 700;
             font-size: 18px;
+            color: #0A3D4A;
         }
         
         .author-info {
-            color: #9ca3af;
+            color: #6b7280;
         }
         
         .testimonial-dots {
@@ -872,7 +680,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: #6b7280;
+            background: #d1d5db;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
@@ -884,7 +692,7 @@
         }
         
         .dot.active {
-            background: linear-gradient(135deg, #1a7f8e, #f39c12);
+            background: linear-gradient(135deg, #006B7D, #FF8C00);
             width: 32px;
             border-radius: 6px;
         }
@@ -893,28 +701,22 @@
             display: none !important;
         }
         
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        
         .form-group label {
             display: block;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 8px;
-            color: #23a5b8;
+            color: #0A3D4A;
         }
         
         .form-group input,
         .form-group select {
             width: 100%;
             padding: 12px 16px;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid rgba(26, 127, 142, 0.3);
+            background: #fff;
+            border: 1px solid rgba(0, 107, 125, 0.2);
             border-radius: 8px;
-            color: #fff;
+            color: #0A3D4A;
             font-size: 16px;
             transition: all 0.3s ease;
         }
@@ -922,13 +724,13 @@
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #23a5b8;
-            box-shadow: 0 0 0 3px rgba(26, 127, 142, 0.1);
+            border-color: #FF8C00;
+            box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
         }
         
         .form-group select option {
-            background: #000;
-            color: #fff;
+            background: #fff;
+            color: #0A3D4A;
         }
         
         .contact-item {
@@ -945,60 +747,32 @@
         
         .contact-icon {
             font-size: 24px;
-            color: #23a5b8;
+            color: #006B7D;
         }
         
         .contact-item h4 {
-            font-weight: bold;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: #0A3D4A;
         }
         
         .contact-item a {
-            color: #d1d5db;
+            color: #4a5568;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .contact-item a:hover {
-            color: #23a5b8;
+            color: #FF8C00;
         }
         
         .contact-item p {
-            color: #d1d5db;
-        }
-        
-        .special-offer {
-            background: linear-gradient(135deg, rgba(26,127,142,0.2) 0%, rgba(0,0,0,0.7) 100%);
-            border: 1px solid rgba(243, 156, 18, 0.5);
-            padding: 32px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            animation: glow 2s ease-in-out infinite;
-        }
-        
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(243, 156, 18, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(243, 156, 18, 0.4);
-            }
-        }
-        
-        .special-offer h3 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 16px;
-        }
-        
-        .special-offer p {
-            color: #d1d5db;
-            margin-bottom: 16px;
+            color: #4a5568;
         }
         
         footer {
-            background: #000;
-            border-top: 1px solid rgba(26, 127, 142, 0.3);
+            background: #0A3D4A;
+            border-top: 1px solid rgba(255, 140, 0, 0.2);
             padding: 48px 0;
         }
         
@@ -1010,13 +784,13 @@
         }
         
         .footer-section h4 {
-            font-weight: bold;
-            color: #23a5b8;
+            font-weight: 700;
+            color: #FF8C00;
             margin-bottom: 16px;
         }
         
         .footer-section p {
-            color: #9ca3af;
+            color: #b0c4de;
             font-size: 14px;
         }
         
@@ -1026,26 +800,35 @@
         
         .footer-section ul li {
             margin-bottom: 8px;
+            color: #b0c4de;
+            font-size: 14px;
         }
         
         .footer-section ul li a {
-            color: #9ca3af;
+            color: #b0c4de;
             text-decoration: none;
             font-size: 14px;
             transition: all 0.3s ease;
         }
         
         .footer-section ul li a:hover {
-            color: #23a5b8;
+            color: #FF8C00;
             padding-left: 10px;
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(26, 127, 142, 0.3);
+            border-top: 1px solid rgba(255, 140, 0, 0.2);
             padding-top: 32px;
             text-align: center;
-            color: #9ca3af;
+            color: #b0c4de;
             font-size: 14px;
+        }
+        
+        .demo-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FF8C00;
+            margin-bottom: 24px;
         }
         
         @media (min-width: 768px) {
@@ -1084,14 +867,6 @@
             
             .footer-grid {
                 grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .new-year-title {
-                font-size: 4em;
-            }
-            
-            .discount-badge {
-                font-size: 2.5em;
             }
         }
         
@@ -1133,52 +908,15 @@
             .stat-number {
                 font-size: 48px;
             }
-            
-            .new-year-popup {
-                padding: 30px 20px;
-            }
-            
-            .new-year-title {
-                font-size: 2.2em;
-            }
-            
-            .new-year-subtitle {
-                font-size: 1.4em;
-            }
-            
-            .discount-badge {
-                font-size: 1.8em;
-                padding: 12px 20px;
-            }
-            
-            .new-year-btn {
-                padding: 15px 30px;
-                font-size: 1.1em;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- New Year Popup -->
-    <div id="newYearPopup" class="new-year-popup-overlay">
-        <div class="new-year-popup">
-            <button class="close-popup">&times;</button>
-            <h1 class="new-year-title">HAPPY NEW YEAR 2026!</h1>
-            <h2 class="new-year-subtitle">Start Your Fitness Journey Now</h2>
-            <div class="discount-badge">20% OFF</div>
-            <p class="new-year-message">
-                Welcome 2026 with a healthier, fitter you! 
-                Join XCoachKart today and get <strong>20% OFF</strong> on all our fitness programs.
-                Let's make 2026 your fittest year yet!
-            </p>
-            <a href="#contact" class="new-year-btn">JOIN NOW & GET 20% OFF</a>
-        </div>
-    </div>
-
-    <a href="https://wa.me/+918888899464?text=Hi%20XCoachKart,%20I%20want%20to%20know%20more%20about%20your%20fitness%20coaching%20services" 
+    <a href="https://wa.me/+918595596066?text=Hi%20XCoachKart,%20I%20want%20to%20know%20more%20about%20your%20fitness%20coaching%20services" 
        target="_blank" 
-       class="whatsapp-float">
+       class="whatsapp-float"
+       aria-label="WhatsApp">
         <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
@@ -1188,7 +926,7 @@
         <div class="nav-container">
             <div class="nav-content">
                 <div class="nav-logo" onclick="scrollToTop()">
-                    <img src="/assets/logo.png" alt="XCoachKart Logo">
+                    <img src="/assets/logo.png" alt="XCoachKart Logo" style="height: 48px; width: auto;">
                 </div>
                 
                 <div class="nav-links">
@@ -1196,15 +934,15 @@
                     <a href="#about" class="nav-link">About</a>
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#quality" class="nav-link">Our Standards</a>
-                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#careers" class="nav-link">For Trainers (Careers)</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
                 
                 <div class="nav-cta">
-                    <a href="#contact" class="btn-primary">Book Demo</a>
+                    <a href="https://wa.me/+918595596066" target="_blank" class="btn-primary">WhatsApp Us: +91 85955 96066</a>
                 </div>
                 
-                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menu">
                     <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -1217,31 +955,27 @@
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#quality">Our Standards</a>
-                    <a href="#testimonials">Testimonials</a>
+                    <a href="#careers">For Trainers (Careers)</a>
                     <a href="#contact">Contact</a>
-                    <a href="#contact" class="btn-primary" style="margin-top:16px;text-align:center;">Book Demo</a>
+                    <a href="https://wa.me/+918595596066" target="_blank" class="btn-primary" style="margin-top:16px;text-align:center;">WhatsApp: +91 85955 96066</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <section id="home">
-        <div class="section-bg">
-            <img src="/assets/images/hero.jpg" alt="Fitness Training">
-            <div class="hero-gradient" style="position:absolute;inset:0;"></div>
-        </div>
-        
         <div class="section-content hero-content">
             <h1>
                 Professional Fitness Coaching<br/>
-                <span class="text-accent">at Your Doorstep</span>
+                <span class="text-accent">Delivered To Your Doorstep</span>
             </h1>
             <p>
-                Safety-first approach with SOP-driven coaching by disciplined professionals. Transform your fitness journey at home with XCoachKart.
+                Certified trainers, 1-hour doorstep sessions, transparent pricing, and structured plans for working professionals and families.
             </p>
+            <p class="hero-location">Now serving in Delhi NCR</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Book a Demo Session</a>
-                <a href="https://wa.me/+918888899464?text=Hi%20XCoachKart,%20I%20want%20to%20book%20a%20demo%20session" 
+                <a href="#contact" class="btn-primary">Book ₹299 Demo Session</a>
+                <a href="https://wa.me/+918595596066?text=Hi%20XCoachKart,%20I%20want%20to%20book%20a%20demo%20session" 
                    target="_blank"
                    class="btn-outline">WhatsApp Now</a>
             </div>
@@ -1249,22 +983,17 @@
     </section>
 
     <section id="about">
-        <div class="section-bg">
-            <img src="/assets/images/about.jpg" alt="About XCoachKart">
-            <div class="section-overlay" style="position:absolute;inset:0;"></div>
-        </div>
-        
         <div class="section-content container">
             <div class="grid-2">
                 <div class="animate-on-scroll fade-in-left">
-                    <h2 style="font-size:48px;font-weight:bold;margin-bottom:24px;">
+                    <h2 style="font-size:48px;font-weight:700;margin-bottom:24px;color:#1a3a52;">
                         Built on <span class="text-accent">Discipline & Trust</span>
                     </h2>
                     <div class="underline" style="margin:0 0 32px 0;"></div>
-                    <p style="font-size:18px;color:#d1d5db;margin-bottom:24px;">
-                        Founded by ex-Indian Air Force professionals, XCoachKart brings military-grade discipline and leadership to fitness coaching. We understand that fitness is not just about exercise—it's about building sustainable habits with safety and consistency.
+                    <p style="font-size:18px;color:#4a5568;margin-bottom:24px;">
+                        Founded by ex-Indian Air Force Pilot, XCoachKart delivers military-grade discipline to doorstep fitness coaching across Delhi NCR. Fitness goes beyond exercise—it's forging sustainable habits through daily motivation and unwavering consistency.
                     </p>
-                    <p style="font-size:18px;color:#d1d5db;">
+                    <p style="font-size:18px;color:#4a5568;">
                         Our mission is to make professional fitness coaching accessible to every family, right at your doorstep. No intimidation, no judgment—just results-driven training with a friendly, supportive approach.
                     </p>
                 </div>
@@ -1274,8 +1003,8 @@
                         <div class="feature-flex">
                             <div class="feature-icon">✓</div>
                             <div>
-                                <h3>Safety-First Approach</h3>
-                                <p style="color:#d1d5db;">Every session follows strict safety protocols and proper form guidance.</p>
+                                <h3>Certified Professionals</h3>
+                                <p style="color:#4a5568;">All trainers are certified and undergo continuous skill development.</p>
                             </div>
                         </div>
                     </div>
@@ -1284,8 +1013,8 @@
                         <div class="feature-flex">
                             <div class="feature-icon">✓</div>
                             <div>
-                                <h3>Certified Professionals</h3>
-                                <p style="color:#d1d5db;">All trainers are certified and undergo continuous skill development.</p>
+                                <h3>Consistent Excellence</h3>
+                                <p style="color:#4a5568;">Consistency you can trust, quality you can feel in every session.</p>
                             </div>
                         </div>
                     </div>
@@ -1294,8 +1023,8 @@
                         <div class="feature-flex">
                             <div class="feature-icon">✓</div>
                             <div>
-                                <h3>Consistent Excellence</h3>
-                                <p style="color:#d1d5db;">SOP-driven coaching ensures you receive the same high standard every session.</p>
+                                <h3>Affordable Convenience</h3>
+                                <p style="color:#4a5568;">Train Smart, Your Home, Your Time, Your Fitness.</p>
                             </div>
                         </div>
                     </div>
@@ -1304,12 +1033,7 @@
         </div>
     </section>
 
-    <section id="services">
-        <div class="section-bg">
-            <img src="/assets/images/services.jpg" alt="Our Services">
-            <div class="section-overlay" style="position:absolute;inset:0;"></div>
-        </div>
-        
+    <section id="services" style="background:#f8f9fa;">
         <div class="section-content container">
             <div class="section-title animate-on-scroll fade-in-up">
                 <h2>Our <span class="text-accent">Programs</span></h2>
@@ -1342,7 +1066,7 @@
                     <h3>Small Group /<br/>Society Training</h3>
                     <p>Energizing group sessions for residential societies and communities, building fitness together.</p>
                     <ul>
-                        <li>4-8 members per group</li>
+                        <li>5-10 members per group</li>
                         <li>Motivating environment</li>
                         <li>Cost-effective</li>
                     </ul>
@@ -1366,51 +1090,52 @@
                 <div class="card card-hover animate-on-scroll scale-in" style="animation-delay: 0.4s;">
                     <div class="card-icon">
                         <svg width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                         </svg>
                     </div>
-                    <h3>Online<br/>Coaching</h3>
-                    <p>Live virtual sessions for those who prefer working out from anywhere with professional guidance.</p>
+                    <h3>Versatile Doorstep<br/>Coaching</h3>
+                    <p>Tailored coaching approaches designed for different goals and needs.</p>
                     <ul>
-                        <li>Live video sessions</li>
-                        <li>Flexible scheduling</li>
-                        <li>Pan-India coverage</li>
+                        <li>Yoga Training</li>
+                        <li>Zumba/Dance Fitness</li>
+                        <li>Strength Coaching</li>
+                        <li>Calisthenics</li>
+                        <li>All Sports Coaching</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div style="text-align:center;margin-top:48px;">
+                <a href="#contact" class="btn-primary">Book ₹299 Demo Now →</a>
             </div>
         </div>
     </section>
 
     <section id="quality">
-        <div class="section-bg">
-            <img src="/assets/images/sop.jpg" alt="Quality Standards">
-            <div class="section-overlay" style="position:absolute;inset:0;"></div>
-        </div>
-        
         <div class="section-content container">
             <div class="section-title animate-on-scroll fade-in-up">
                 <h2>Our <span class="text-accent">Quality Standards</span></h2>
                 <div class="underline"></div>
-                <p>Military-inspired discipline meets professional fitness coaching standards.</p>
+                <p>Professional fitness coaching powered by military-inspired discipline.</p>
             </div>
             
             <div class="grid-3" style="margin-bottom:48px;">
                 <div class="stat-card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
                     <div class="stat-number">60</div>
                     <h3>Minutes Per Session</h3>
-                    <p style="color:#d1d5db;">Standard structured sessions with warm-up, training, and cool-down.</p>
+                    <p style="color:#4a5568;">Standard structured sessions with warm-up, training, and cool-down.</p>
                 </div>
                 
                 <div class="stat-card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
                     <div class="stat-number">100%</div>
                     <h3>Certified Trainers</h3>
-                    <p style="color:#d1d5db;">Every trainer holds recognized certifications and undergoes regular training.</p>
+                    <p style="color:#4a5568;">Every trainer holds recognized certifications and undergoes regular training.</p>
                 </div>
                 
                 <div class="stat-card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
                     <div class="stat-number">24/7</div>
                     <h3>Support Available</h3>
-                    <p style="color:#d1d5db;">Round-the-clock assistance for queries, scheduling, and guidance.</p>
+                    <p style="color:#4a5568;">Round-the-clock assistance for queries, scheduling, and guidance.</p>
                 </div>
             </div>
             
@@ -1428,22 +1153,63 @@
                 <div class="quality-box animate-on-scroll fade-in-right">
                     <h3>Performance Commitment</h3>
                     <ul class="quality-list">
-                        <li><span>▸</span><span>Punctual arrival with 15-minute buffer time</span></li>
+                        <li><span>▸</span><span>Punctual arrival and Full 1 Hour commitment</span></li>
                         <li><span>▸</span><span>Professional conduct and respectful communication</span></li>
                         <li><span>▸</span><span>Customized workout plans based on your equipment and space</span></li>
                         <li><span>▸</span><span>Continuous learning and certification upgrades for trainers</span></li>
                     </ul>
                 </div>
             </div>
+            
+            <div style="text-align:center;margin-top:48px;">
+                <a href="#contact" class="btn-primary">Book ₹299 Demo Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="careers" style="background:#f8f9fa;">
+        <div class="section-content container">
+            <div class="section-title animate-on-scroll fade-in-up">
+                <h2>Join Our <span class="text-accent">Trainer Network</span></h2>
+                <div class="underline"></div>
+                <p>Are you a certified fitness trainer looking to make a real impact? Join XCoachKart's professional coaching team.</p>
+            </div>
+            
+            <div class="grid-2">
+                <div class="card animate-on-scroll fade-in-left">
+                    <h3 style="margin-bottom:24px;">Why Join XCoachKart?</h3>
+                    <ul class="quality-list">
+                        <li><span>▸</span><span>Competitive compensation and flexible schedules</span></li>
+                        <li><span>▸</span><span>Continuous professional development and certification support</span></li>
+                        <li><span>▸</span><span>Work with motivated clients in premium residential areas</span></li>
+                        <li><span>▸</span><span>Be part of a disciplined, military-grade organization</span></li>
+                        <li><span>▸</span><span>Marketing and client acquisition handled by us</span></li>
+                    </ul>
+                </div>
+                
+                <div class="card animate-on-scroll fade-in-right">
+                    <h3 style="margin-bottom:24px;">Requirements</h3>
+                    <ul class="quality-list">
+                        <li><span>▸</span><span>Recognized fitness certification (mandatory)</span></li>
+                        <li><span>▸</span><span>Minimum 1 year of training experience</span></li>
+                        <li><span>▸</span><span>Professional attitude and punctuality</span></li>
+                        <li><span>▸</span><span>Strong communication skills</span></li>
+                        <li><span>▸</span><span>Own transportation for doorstep coaching</span></li>
+                    </ul>
+                    <div style="margin-top:24px;">
+                        <a href="https://wa.me/+918595596066?text=Hi%20XCoachKart,%20I%20am%20a%20certified%20trainer%20and%20want%20to%20join%20your%20team" 
+                           target="_blank" 
+                           class="btn-primary" 
+                           style="width:100%;text-align:center;display:block;">
+                            Apply Now via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="testimonials">
-        <div class="section-bg">
-            <img src="/assets/images/testimonials.jpg" alt="Client Testimonials">
-            <div class="section-overlay" style="position:absolute;inset:0;"></div>
-        </div>
-        
         <div class="section-content container">
             <div class="section-title animate-on-scroll fade-in-up">
                 <h2>What Our Clients <span class="text-accent">Say</span></h2>
@@ -1495,32 +1261,32 @@
                     </div>
                     
                     <div class="testimonial-dots">
-                        <button class="dot active"></button>
-                        <button class="dot"></button>
-                        <button class="dot"></button>
+                        <button class="dot active" aria-label="Testimonial 1"></button>
+                        <button class="dot" aria-label="Testimonial 2"></button>
+                        <button class="dot" aria-label="Testimonial 3"></button>
                     </div>
                 </div>
+            </div>
+            
+            <div style="text-align:center;margin-top:48px;">
+                <a href="#contact" class="btn-primary">Book ₹299 Demo Now →</a>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="section-bg">
-            <img src="/assets/images/contact.jpg" alt="Contact Us">
-            <div class="section-overlay" style="position:absolute;inset:0;"></div>
-        </div>
-        
+    <section id="contact" style="background:#f8f9fa;">
         <div class="section-content container">
             <div class="section-title animate-on-scroll fade-in-up">
-                <h2>Book Your <span class="text-accent">Free Demo</span></h2>
+                <h2>Book Your <span class="text-accent">Demo Session</span></h2>
                 <div class="underline"></div>
-                <p>Start your fitness journey today with a complimentary demo session. Experience our professional coaching first-hand!</p>
+                <p class="demo-price">Just ₹299</p>
+                <p>Start your fitness journey today with Demo session at Just ₹299. Experience our professional coaching first-hand!</p>
             </div>
             
             <div class="grid-2">
                 <div class="card animate-on-scroll fade-in-left">
                     <h3 style="margin-bottom:24px;">Send Us Your Details</h3>
-                    <form id="contact-form">
+                    <div style="display:flex;flex-direction:column;gap:24px;">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -1532,8 +1298,8 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="location">Location/City *</label>
-                            <input type="text" id="location" name="location" required>
+                            <label for="location">Location/Area in Delhi NCR *</label>
+                            <input type="text" id="location" name="location" required placeholder="e.g., Gurgaon Sector 45">
                         </div>
                         
                         <div class="form-group">
@@ -1545,84 +1311,68 @@
                                 <option value="General Fitness">General Fitness</option>
                                 <option value="Family Fitness">Family Fitness</option>
                                 <option value="Society Group">Society Group Training</option>
-                                <option value="Online Coaching">Online Coaching</option>
+                                <option value="Sports Coaching">Sports Coaching</option>
+                                <option value="Yoga">Yoga</option>
+                                <option value="Zumba/Dance Fitness">Zumba/Dance Fitness</option>
                             </select>
                         </div>
                         
-                        <button type="submit" class="btn-primary" style="width:100%;padding:16px;">
-                            Book Free Demo Session
+                        <button onclick="submitForm()" class="btn-primary" style="width:100%;padding:16px;">
+                            Book ₹299 Demo Session
                         </button>
-                    </form>
+                    </div>
                 </div>
                 
-                <div style="display:flex;flex-direction:column;gap:32px;" class="animate-on-scroll fade-in-right">
-                    <div class="card">
-                        <h3 style="margin-bottom:24px;">Get in Touch</h3>
-                        <div style="display:flex;flex-direction:column;gap:24px;">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20.57 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.27.36-.66.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.55-.45-1-1-1H4.39c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>Call Us</h4>
-                                    <a href="tel:+918888899464">+918888899464</a>
-                                </div>
+                <div class="card animate-on-scroll fade-in-right">
+                    <h3 style="margin-bottom:24px;">Get in Touch</h3>
+                    <div style="display:flex;flex-direction:column;gap:24px;">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.57 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.27.36-.66.24-1.01-.37-1.11-.56-2.3-.56-3.53 0-.55-.45-1-1-1H4.39c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+                                </svg>
                             </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12.05 20.21c-1.5 0-2.97-.39-4.27-1.14l-.3-.18-3.15.83.84-3.07-.19-.31a8.154 8.154 0 01-1.26-4.41c0-4.48 3.64-8.13 8.12-8.13 2.17 0 4.21.85 5.75 2.38 1.53 1.53 2.38 3.57 2.38 5.75 0 4.48-3.64 8.12-8.12 8.12z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>WhatsApp</h4>
-                                    <a href="https://wa.me/+918888899464" target="_blank">Chat with us instantly</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>Email</h4>
-                                    <a href="mailto:Kaps_003@yahoo.co.in">Kaps_003@yahoo.co.in</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4>Service Areas</h4>
-                                    <p>
-                                        Ghaziabad, Noida, Greater Noida West
-                                        <br/><span style="font-size:14px;">+ Pan-India Online Coaching</span>
-                                    </p>
-                                </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <a href="tel:+918595596066">+91 85955 96066</a>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="special-offer">
-                        <h3>
-                            <svg width="24" height="24" fill="#f39c12" viewBox="0 0 24 24" style="vertical-align: text-bottom; margin-right: 8px;">
-                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/>
-                            </svg>
-                            Special Offer
-                        </h3>
-                        <p>
-                            Book your demo this week and get <span class="text-accent" style="font-weight:bold;">20% OFF</span> on your first month subscription!
-                        </p>
-                        <p style="font-size:14px;color:#9ca3af;">*Offer valid for new customers only</p>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zM12.05 20.21c-1.5 0-2.97-.39-4.27-1.14l-.3-.18-3.15.83.84-3.07-.19-.31a8.154 8.154 0 01-1.26-4.41c0-4.48 3.64-8.13 8.12-8.13 2.17 0 4.21.85 5.75 2.38 1.53 1.53 2.38 3.57 2.38 5.75 0 4.48-3.64 8.12-8.12 8.12z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/+918595596066" target="_blank">Chat with us instantly</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:xcoachkart@gmail.com">xcoachkart@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Service Areas</h4>
+                                <p>Delhi, Gurugram, Noida, Ghaziabad, Faridabad</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1633,8 +1383,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <img src="/assets/logo.png" alt="XCoachKart Logo" style="height:60px;width:auto;margin-bottom:16px;">
-                    <p>Professional fitness coaching at your doorstep with military-grade discipline and care.</p>
+                    <img src="/assets/logo.png" alt="XCoachKart Logo" style="height:60px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1);">
+                    <p>Professional fitness coaching delivered to your doorstep with military-grade discipline and care.</p>
                 </div>
                 
                 <div class="footer-section">
@@ -1643,29 +1393,29 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#careers">For Trainers</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Programs</h4>
+                    <h4>Our Programs</h4>
                     <ul>
                         <li>Personal Training</li>
                         <li>Group Training</li>
                         <li>Family Fitness</li>
-                        <li>Online Coaching</li>
+                        <li>Versatile Coaching</li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 XCoachKart. All rights reserved. | Professional Fitness Coaching at Your Doorstep</p>
+                <p>&copy; 2026 XCoachKart. All rights reserved. | Professional Fitness Coaching Delivered To Your Doorstep</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Scroll to top function
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
@@ -1673,66 +1423,44 @@
             });
         }
         
-        // New Year Popup Functions
-        const newYearPopup = document.getElementById('newYearPopup');
-        const closePopupBtn = document.querySelector('.close-popup');
-        
-        // Show popup after 5 seconds
-        setTimeout(() => {
-            newYearPopup.classList.add('active');
-            createConfetti();
-        }, 5000);
-        
-        // Close popup when close button is clicked
-        closePopupBtn.addEventListener('click', () => {
-            newYearPopup.classList.remove('active');
-        });
-        
-        // Close popup when clicking outside
-        newYearPopup.addEventListener('click', (e) => {
-            if (e.target === newYearPopup) {
-                newYearPopup.classList.remove('active');
-            }
-        });
-        
-        // Close popup when Join Now button is clicked
-        document.querySelector('.new-year-btn').addEventListener('click', () => {
-            newYearPopup.classList.remove('active');
-        });
-        
-        // Create confetti effect
-        function createConfetti() {
-            const popup = document.querySelector('.new-year-popup');
-            const colors = ['#FFD700', '#FF4500', '#32CD32', '#1E90FF', '#FF69B4', '#9370DB'];
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const goal = document.getElementById('goal').value;
             
-            // Create confetti
-            for (let i = 0; i < 100; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.top = Math.random() * 100 + '%';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.opacity = Math.random() * 0.7 + 0.3;
-                confetti.style.width = Math.random() * 10 + 5 + 'px';
-                confetti.style.height = confetti.style.width;
-                confetti.style.animation = `confettiFall ${Math.random() * 3 + 2}s linear ${Math.random() * 2}s infinite`;
-                popup.appendChild(confetti);
+            if (!name || !phone || !location || !goal) {
+                alert('Please fill all required fields');
+                return;
             }
             
-            // Create fireworks
-            for (let i = 0; i < 20; i++) {
-                const firework = document.createElement('div');
-                firework.className = 'firework';
-                firework.style.left = Math.random() * 80 + 10 + '%';
-                firework.style.top = Math.random() * 80 + 10 + '%';
-                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                firework.style.opacity = '0.7';
-                firework.style.animation = `fireworks ${Math.random() * 2 + 1}s ease-in-out ${Math.random() * 3}s infinite`;
-                popup.appendChild(firework);
+            if (phone.length !== 10 || !/^\d+$/.test(phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
             }
+            
+            const message = `*New Demo Booking Request*
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Location:* ${location}
+*Fitness Goal:* ${goal}
+
+Please schedule my ₹299 demo session.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/+918595596066?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
+            document.getElementById('name').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('location').value = '';
+            document.getElementById('goal').value = '';
+            
+            alert('Thank you! Opening WhatsApp to confirm your demo booking.');
         }
         
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -1746,7 +1474,6 @@
             });
         });
         
-        // Testimonial slider
         let currentSlide = 0;
         const slides = document.querySelectorAll('.testimonial-slide');
         const dots = document.querySelectorAll('.dot');
@@ -1775,42 +1502,6 @@
             });
         });
         
-        // Contact form submission
-        const contactForm = document.getElementById('contact-form');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const location = document.getElementById('location').value;
-            const goal = document.getElementById('goal').value;
-            
-            if (phone.length !== 10 || !/^\d+$/.test(phone)) {
-                alert('Please enter a valid 10-digit phone number');
-                return;
-            }
-            
-            const message = `Hi XCoachKart! I want to book a free demo session.
-
-*Name:* ${name}
-*Phone:* ${phone}
-*Location:* ${location}
-*Fitness Goal:* ${goal}
-
-Please contact me to schedule the demo.`;
-            
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/+918888899464?text=${encodedMessage}`;
-            
-            window.open(whatsappUrl, '_blank');
-            
-            contactForm.reset();
-            
-            alert('Thank you! Opening WhatsApp to confirm your demo booking.');
-        });
-        
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1824,17 +1515,15 @@ Please contact me to schedule the demo.`;
             });
         });
         
-        // Navbar shadow on scroll
         const navbar = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.3)';
+                navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
             } else {
                 navbar.style.boxShadow = 'none';
             }
         });
         
-        // Scroll animations
         const observerOptions = {
             root: null,
             threshold: 0.1,
@@ -1854,12 +1543,10 @@ Please contact me to schedule the demo.`;
             });
         }, observerOptions);
         
-        // Observe all elements with animate-on-scroll class
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
         });
         
-        // Counter animation for stats
         const animateCounter = (element, target) => {
             let current = 0;
             const increment = target / 50;
